@@ -1,17 +1,16 @@
 from uuid import uuid4
 
-from fastapi import status, HTTPException
+from config import Settings
+from fastapi import HTTPException, status
 from injector import Inject
+from models.users import UserSQL
 from pydantic import BaseModel, model_validator
 from pydiator_core.interfaces import BaseResponse
 from pydiator_core.mediatr import BaseRequest
 from pydiator_core.mediatr_container import BaseHandler
-
-from config import Settings
-from models.users import UserSQL
 from repositories.user_repository import UserRepository
-from schemas.users import UserResponse, SessionReponce
-from utils.jwt_token import generate_token_data, generate_token
+from schemas.users import SessionReponce, UserResponse
+from utils.jwt_token import generate_token, generate_token_data
 from utils.password import get_hashed_password
 
 

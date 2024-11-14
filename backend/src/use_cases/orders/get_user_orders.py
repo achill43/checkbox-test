@@ -1,15 +1,14 @@
 from decimal import Decimal
-from injector import Inject
 
 from fastapi import Query
+from injector import Inject
 from pydantic import BaseModel
 from pydiator_core.interfaces import BaseResponse
 from pydiator_core.mediatr import BaseRequest
 from pydiator_core.mediatr_container import BaseHandler
-
-from request_context import RequestContextProvider
 from repositories.order_repository import OrderRepository
-from schemas.orders import Order, OrderItem, Payment, OrderFilter
+from request_context import RequestContextProvider
+from schemas.orders import Order, OrderFilter, OrderItem, Payment
 
 
 class GetUserOrdersRequest(OrderFilter, BaseRequest):

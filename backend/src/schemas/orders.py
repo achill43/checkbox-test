@@ -1,8 +1,8 @@
 from datetime import date
 from decimal import Decimal
-from pydantic import BaseModel
 
 from models.products import PaymentType
+from pydantic import BaseModel
 
 
 class OrderItemCreate(BaseModel):
@@ -18,7 +18,6 @@ class OrderItem(BaseModel):
     total: Decimal
 
     class Config:
-        orm_mode = True
         from_attributes = True
 
 
@@ -32,7 +31,6 @@ class Payment(BaseModel):
     amount: Decimal
 
     class Config:
-        orm_mode = True
         from_attributes = True
 
 
@@ -51,7 +49,6 @@ class Order(BaseModel):
     created_at: date
 
     class Config:
-        orm_mode = True
         from_attributes = True
 
 

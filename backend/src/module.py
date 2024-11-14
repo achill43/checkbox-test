@@ -1,16 +1,14 @@
 import injector
+from config import Settings, settings
+from db import SessionLocal
 from fastapi_injector import request_scope
-from sqlalchemy.ext.asyncio.session import AsyncSession
-
-from request_context import RequestContextProvider
-from repositories.order_repository import OrderRepository
 from repositories.order_item_repository import OrderItemRepository
+from repositories.order_repository import OrderRepository
 from repositories.payment_repository import PaymentRepository
 from repositories.products_repository import ProductRepository
 from repositories.user_repository import UserRepository
-
-from db import SessionLocal
-from config import Settings, settings
+from request_context import RequestContextProvider
+from sqlalchemy.ext.asyncio.session import AsyncSession
 
 
 def configure_for_production(binder: injector.Binder) -> None:

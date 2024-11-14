@@ -1,10 +1,9 @@
+from models.products import OrderItemSQL, OrderSQL, PaymentSQL
+from schemas.orders import OrderFilter
 from sqlalchemy import func
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.orm import selectinload
-
-from schemas.orders import OrderFilter
-from models.products import OrderItemSQL, OrderSQL, PaymentSQL
 
 
 class OrderRepository:

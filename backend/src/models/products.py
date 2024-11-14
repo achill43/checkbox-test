@@ -3,12 +3,11 @@ from decimal import Decimal
 from enum import Enum
 from typing import List
 
-from sqlalchemy import ForeignKey, DECIMAL, DateTime
+import models
+from db import Base
+from sqlalchemy import DECIMAL, DateTime, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
-
-from db import Base
-import models
 
 
 class ProductSQL(Base):

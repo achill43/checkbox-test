@@ -1,13 +1,15 @@
 from typing import cast
-from fastapi import APIRouter, Depends, status, Response
-from pydiator_core.mediatr import pydiator
 
 from depends.auth_deps import get_current_user
+from fastapi import APIRouter, Depends, Response, status
+from pydiator_core.mediatr import pydiator
 from schemas.users import UserResponse
-from use_cases.orders.create_order import CreateOrderRequest, CreateOrderResponse
-from use_cases.orders.get_user_orders import GetUserOrdersRequest, GetUserOrdersResponse
-from use_cases.checks.generate_check import GenerateCheckRequest, GenerateCheckResponse
-
+from use_cases.checks.generate_check import (GenerateCheckRequest,
+                                             GenerateCheckResponse)
+from use_cases.orders.create_order import (CreateOrderRequest,
+                                           CreateOrderResponse)
+from use_cases.orders.get_user_orders import (GetUserOrdersRequest,
+                                              GetUserOrdersResponse)
 
 orders_router = APIRouter(prefix="/orders")
 

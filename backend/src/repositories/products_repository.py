@@ -1,7 +1,6 @@
+from models.products import ProductSQL
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-
-from models.products import ProductSQL
 
 
 class ProductRepository:

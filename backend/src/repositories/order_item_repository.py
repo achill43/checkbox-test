@@ -1,7 +1,6 @@
+from models.products import OrderItemSQL
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-
-from models.products import OrderItemSQL
 
 
 class OrderItemRepository:

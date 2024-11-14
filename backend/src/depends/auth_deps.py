@@ -1,10 +1,9 @@
-from fastapi import Depends, HTTPException, status, Request
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi import Depends, HTTPException, Request, status
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from injector import Injector
-
-from schemas.users import UserResponse
-from request_context import RequestContextProvider, RequestUserDataDict
 from repositories.user_repository import UserRepository
+from request_context import RequestContextProvider, RequestUserDataDict
+from schemas.users import UserResponse
 from utils.jwt_token import check_expired_token, decode_token
 
 

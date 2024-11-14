@@ -1,10 +1,9 @@
 from injector import Inject
+from models.products import ProductSQL
 from pydantic import BaseModel
 from pydiator_core.interfaces import BaseResponse
 from pydiator_core.mediatr import BaseRequest
 from pydiator_core.mediatr_container import BaseHandler
-
-from models.products import ProductSQL
 from repositories.products_repository import ProductRepository
 from schemas.products import Product, ProductCreate
 

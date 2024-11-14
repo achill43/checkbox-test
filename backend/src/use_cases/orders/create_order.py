@@ -1,18 +1,19 @@
 from decimal import Decimal
 from typing import cast
+
 from injector import Inject
+from models.products import OrderItemSQL, OrderSQL, PaymentSQL, ProductSQL
 from pydantic import BaseModel
 from pydiator_core.interfaces import BaseResponse
 from pydiator_core.mediatr import BaseRequest
 from pydiator_core.mediatr_container import BaseHandler
-
-from request_context import RequestContextProvider
-from models.products import OrderSQL, OrderItemSQL, PaymentSQL, ProductSQL
-from repositories.order_repository import OrderRepository
 from repositories.order_item_repository import OrderItemRepository
+from repositories.order_repository import OrderRepository
 from repositories.payment_repository import PaymentRepository
 from repositories.products_repository import ProductRepository
-from schemas.orders import OrderCreate, Order, OrderItem, OrderItemCreate, Payment
+from request_context import RequestContextProvider
+from schemas.orders import (Order, OrderCreate, OrderItem, OrderItemCreate,
+                            Payment)
 
 
 class CreateOrderRequest(OrderCreate, BaseRequest):

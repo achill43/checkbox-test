@@ -1,21 +1,18 @@
 from decimal import Decimal
-from injector import Inject
 
 from fastapi import Query
-
 from fastapi.concurrency import run_in_threadpool
 from fastapi.templating import Jinja2Templates
+from injector import Inject
 from pydantic import BaseModel
 from pydiator_core.interfaces import BaseResponse
 from pydiator_core.mediatr import BaseRequest
 from pydiator_core.mediatr_container import BaseHandler
-from sqlalchemy.sql.functions import user
-
-
-from request_context import RequestContextProvider
 from repositories.order_repository import OrderRepository
 from repositories.user_repository import UserRepository
+from request_context import RequestContextProvider
 from schemas.orders import Order, OrderItem, Payment
+from sqlalchemy.sql.functions import user
 
 
 class GenerateCheckRequest(BaseModel, BaseRequest):

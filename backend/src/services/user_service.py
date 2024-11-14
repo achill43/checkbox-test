@@ -1,5 +1,5 @@
-from repositories.user_repository import UserRepository
 from models.users import UserSQL
+from repositories.user_repository import UserRepository
 from schemas.users import UserCreate
 
 

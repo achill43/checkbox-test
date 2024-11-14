@@ -1,8 +1,8 @@
-import jwt
-from jwt.exceptions import DecodeError
 from datetime import datetime, timedelta
 
+import jwt
 from config import settings
+from jwt.exceptions import DecodeError
 from models import UserSQL
 
 

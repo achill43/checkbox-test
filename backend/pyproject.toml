@@ -30,6 +30,7 @@ pytest-mock = "^3.14.0"
 pytest-cov = "^6.0.0"
 pre-commit = "^4.0.1"
 pyright = "^1.1.388"
+aiosqlite = "^0.20.0"
 
 
 [build-system]

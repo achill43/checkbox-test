@@ -1,15 +1,9 @@
 from fastapi import APIRouter, status
 from pydiator_core.mediatr import pydiator
-
-from use_cases.products.create_product import (
-    CreateProductRequest,
-    CreateProductResponse,
-)
-from use_cases.products.get_products_list import (
-    GetProductsListRequest,
-    GetProductsListResponse,
-)
-
+from use_cases.products.create_product import (CreateProductRequest,
+                                               CreateProductResponse)
+from use_cases.products.get_products_list import (GetProductsListRequest,
+                                                  GetProductsListResponse)
 
 products_router = APIRouter(prefix="/products")
 

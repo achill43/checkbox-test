@@ -1,14 +1,11 @@
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
-from fastapi_injector import InjectorMiddleware, attach_injector
-from fastapi.middleware.cors import CORSMiddleware
-
-from injector_setup import injector_setup
-from pydiator_setup import setup_pydiator
 
 from config import settings
-
-from db import SessionLocal, engine
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi_injector import InjectorMiddleware, attach_injector
+from injector_setup import injector_setup
+from pydiator_setup import setup_pydiator
 from routers import include_routes
 
 
@@ -20,16 +17,12 @@ def init_app():
         To understand more, read https://fastapi.tiangolo.com/advanced/events/
         """
         yield
-        pydiator.is_ready = False  # Optional: Reset pydiator if needed
-        if engine is not None:
-            # Close the DB connection
-            async with SessionLocal() as session:
-                await session.close()
 
     # Ініціалізація застосунку FastAPI
-    _app = FastAPI(lifespan=lifespan, title=settings.PROJECT_NAME, docs_url="/api/docs")
+    _app = FastAPI(title=settings.PROJECT_NAME, docs_url="/api/docs")
 
     injector = injector_setup(app=_app)
+    attach_injector(_app, injector)
     pydiator = setup_pydiator(injector)
 
     # Middlewares

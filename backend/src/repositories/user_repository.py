@@ -1,10 +1,9 @@
 from typing import cast
 
+from models.users import UserSQL
 from sqlalchemy import delete
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-
-from models.users import UserSQL
 
 
 class UserRepository:

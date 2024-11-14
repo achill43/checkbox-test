@@ -1,4 +1,5 @@
 from decimal import Decimal
+
 from pydantic import BaseModel
 
 
@@ -13,5 +14,4 @@ class Product(BaseModel):
     price: Decimal
 
     class Config:
-        orm_mode = True
         from_attributes = True
